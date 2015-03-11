@@ -3,6 +3,6 @@
   "type": "wordpress-plugin",
   "description": "Demonstration of library loading method",
   "autoload": {
-    "files": [ "vendor/Pritect/ExampleLoader/example-loader.php" ]
+    "files": [ "example-loader.php" ]
   }
 }
