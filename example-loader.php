@@ -30,9 +30,9 @@ if ( ! function_exists( pritect_example_loader ) ) {
 	 * be used if there are other versions installed as libraries or as a plugin
 	 *
 	 * @param mixed $params
-	 * @param mixed $version
+	 * @param mixed $version If a string then the required version is '<=' this, otherwise if an array then the version must match all of the version pairs
 	 *
-	 * @return null
+	 * @return mixed
 	 */
 	function pritect_example_loader( $params = null, $version = null ) {
 		$class_matches = array();
@@ -62,6 +62,7 @@ if ( ! function_exists( pritect_example_loader ) ) {
 						if ( version_compare( $test_version, $compare_version, $compare_operator ) ) {
 							$maybe_match = true;
 						} else {
+							// The version must match ALL of the version pairs
 							$maybe_match = false;
 							break;
 						}
